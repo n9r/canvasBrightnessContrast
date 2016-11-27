@@ -1,25 +1,17 @@
-/**
- * Created by n92 on 2016-11-25.
- */
 window.onload = function () {
 
    // get input and output elements
-   anImage = document.querySelector('.road-image');
+   inputImage = document.querySelector('.road-image');
    myCanvas = document.querySelector('.result-canvas');
 
-
    //initialize image
-   myImage.setImage(anImage);
+   myImage.setImage(inputImage);
    myImage.setCanvas(myCanvas);
    myImage.drawImage();
 
    //sliders setup
    brightnessContrastSliderSetup();
-
-
-   //temporary filter
 };
-
 
 // sliders setup
 
@@ -52,9 +44,11 @@ var brightnessContrastSliderSetup = function () {
 var myImage = (function () {
 
    // PRIVATE PARTS ****************
+   
    var image, outputCanvas, ctx, ctxData;
 
    var createCanvas = function ( w , h ) {
+   
       var el = document.createElement("canvas");
       el.width = w;
       el.height = h;
@@ -63,19 +57,16 @@ var myImage = (function () {
 
    // PUBLIC PARTS ****************
 
-   //logs image to console
-   var consolelog = function () {
-     console.log(image);
-   };
-
    //sets image value from users input
    var setImage = function (img) {
-     image = img;
+   
+      image = img;
    };
 
    //sets canvas value from users input
    var setCanvas = function (canvas) {
-     outputCanvas = canvas;
+   
+      outputCanvas = canvas;
    };
 
    // draws image to the canvas
@@ -94,6 +85,7 @@ var myImage = (function () {
    // modifiers functions
 
    var modifyBrightnessContrast = function (eb, ec) {
+   
       var f1,f2,f3,c1,c2,c3;
       eb = eb || 0;
       ec = ec || 0;
@@ -124,7 +116,6 @@ var myImage = (function () {
       setImage: setImage,
       setCanvas: setCanvas,
       drawImage: drawImage,
-      console: consolelog,
       modifyBrightnessContrast: modifyBrightnessContrast
    }
 })();
