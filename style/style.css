@@ -1,0 +1,13 @@
+.container {
+   width: 420px;
+   margin: auto;
+}
+
+input {
+   width: 100%;
+   margin: 3px auto;
+}
+
+img {
+   width: 100%;
+}
